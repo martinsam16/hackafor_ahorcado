@@ -1,0 +1,17 @@
+{
+  "name": "twitch-client",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@twurple/api": "^5.3.4",
+    "@twurple/auth": "^5.3.4",
+    "@twurple/chat": "^5.3.4",
+    "@twurple/common": "^5.3.4",
+    "@twurple/eventsub-ws": "^5.3.4",
+    "kafkajs": "^2.2.3",
+    "mongodb": "^5.0.0"
+  }
+}

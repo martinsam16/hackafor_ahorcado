@@ -1,0 +1,6 @@
+version: "3.6"
+services:
+  dino-twitch-client:
+    build: .
+    env_file:
+      - dev.env
