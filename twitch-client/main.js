@@ -1,7 +1,6 @@
 import {ChatClient} from '@twurple/chat';
 import twitchAuthProvider from './providers/TwitchAuthProvider.js';
 import sendEvent from "./services/KafkaProducerService.js";
-import {ChatEmote} from "@twurple/common";
 
 const channelsToRunBot = ['dinodev16']
 const chatClient = new ChatClient({authProvider: twitchAuthProvider, channels: channelsToRunBot});
@@ -14,7 +13,7 @@ chatClient.onMessage(async (channel, user, msg, privMsg) => {
     if (msg.startsWith(COMMAND_PREFIX)) {
         const command = msg.split(COMMAND_PREFIX).at(1);
         console.log(command)
-        if (command === 'ahorcado' && channelsToRunBot.includes(user)) {
+        if (command === 'aforcado' && channelsToRunBot.includes(user)) {
             await chatClient.say(channel, '[ahorcado_digital] Iniciado!!');
             await sendEvent('events', 'AHORCADO_INITIALIZED', user, channel, command, null);
         } else if (command.length > 1) {
@@ -24,6 +23,5 @@ chatClient.onMessage(async (channel, user, msg, privMsg) => {
             await sendEvent('events', 'LETTER', user, channel, letter, null);
         }
         //timeout
-        //await sendEvent('events', 'COMMAND', user, channel, command, twitchPrivateMessageWithEmoteUrl(privMsg));
     }
 });
