@@ -1,2 +1,7 @@
 /twitch-client/node_modules/
-/websocket-server/node_modules
+/twitch-client/dev.env
+
+/websocket-server/node_modules/
+/websocket-server/dev.env
+
+/frontend/node_modules/
